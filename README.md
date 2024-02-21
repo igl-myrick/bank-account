@@ -11,3 +11,11 @@ Code:
 let newAccount = new Account("John", 100);
 newAccount.deposit(10);
 Expect: newAccount.balance = 110;
+
+Describe: Account.prototype.withdraw
+
+Test: It should remove an amount from the balance value.
+Code: 
+let newAccount = new Account("John", 100);
+newAccount.withdraw(10);
+Expect: newAccount.balance = 90;
