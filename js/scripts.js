@@ -7,3 +7,7 @@ function Account(userName, initialDeposit) {
 Account.prototype.deposit = function(depositAmt) {
   this.balance = this.balance + depositAmt;
 }
+
+Account.prototype.withdraw = function(withdrawalAmt) {
+  this.balance = this.balance - withdrawalAmt;
+}
