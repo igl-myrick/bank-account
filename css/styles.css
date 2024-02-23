@@ -1,0 +1,22 @@
+h1, h2 {
+  text-align: center;
+}
+
+.col-md-6 {
+  width: 48%;
+  margin-bottom: 40px;
+  border: 1px solid rgb(211, 211, 211);
+  border-radius: 20px;
+}
+
+.left {
+  margin-right: 2%;
+}
+
+.right {
+  margin-left: 2%
+}
+
+.hidden {
+  display: none;
+}
