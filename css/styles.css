@@ -2,19 +2,33 @@ h1, h2 {
   text-align: center;
 }
 
+h5 {
+  margin-top: 40px;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
 .col-md-6 {
-  width: 48%;
+  width: 48.5%;
   margin-bottom: 40px;
   border: 1px solid rgb(211, 211, 211);
   border-radius: 20px;
 }
 
+#history {
+  border: 1px solid rgb(211, 211, 211);
+  border-radius: 20px;
+}
+
 .left {
-  margin-right: 2%;
+  margin-right: 3%;
 }
 
 .right {
-  margin-left: 2%
+  margin-left: 3%
 }
 
 .hidden {
