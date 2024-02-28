@@ -1,6 +1,6 @@
 // Account business logic
 function Account() {
-  this.userName = "";
+  this.userName = "userName";
   this.balance = 0;
 }
 
@@ -12,7 +12,6 @@ Account.prototype.withdraw = function(withdrawalAmt) {
   this.balance = this.balance - withdrawalAmt;
 }
 
-// business logic
 let newAccount = new Account();
 
 // ui logic
@@ -36,6 +35,39 @@ function handleRegistration(e) {
   registrationForm.remove();
 }
 
+function handleTransfer(e) {
+  e.preventDefault();
+
+  const transferDiv = document.getElementById("transfer-form");
+  const resultMsg = document.createElement("p");
+  transferDiv.append(resultMsg);
+
+  const valueToDeposit = document.getElementById("deposit").value;
+  const valueToWithdraw = document.getElementById("withdraw").value;
+
+  if (valueToDeposit !== "" && valueToWithdraw !== "") {
+    resultMsg.innerText = "Please fill out only one field."
+    resultMsg.style.color = "red";
+  } else if (valueToDeposit !== "") {
+    newAccount.balance = parseInt(newAccount.balance) + parseInt(valueToDeposit);
+    document.querySelector("span#user-balance").innerText = newAccount.balance;
+    resultMsg.innerText = "Transfer successful."
+    resultMsg.style.color = "green";
+  } else if (valueToWithdraw !== "" && (newAccount.balance - valueToWithdraw > 0)) {
+    newAccount.balance = parseInt(newAccount.balance) - parseInt(valueToWithdraw);
+    document.querySelector("span#user-balance").innerText = newAccount.balance;
+    resultMsg.innerText = "Transfer successful."
+    resultMsg.style.color = "green";
+  } else if (newAccount.balance - valueToWithdraw <= 0) {
+    resultMsg.innerText = "Withdrawal amount too high."
+    resultMsg.style.color = "red";
+  }
+  document.querySelector("form#transfer-form").addEventListener("submit", function() {
+    resultMsg.remove();
+  });
+}
+
 window.addEventListener("load", function() {
   document.querySelector("form#registration-form").addEventListener("submit", handleRegistration);
+  document.querySelector("form#transfer-form").addEventListener("submit", handleTransfer);
 });
