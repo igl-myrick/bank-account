@@ -19,7 +19,7 @@
           </div>
           <div class="form-group">
             <label for="initial-deposit">Initial Deposit:</label>
-            <input type="text" class="form-control" id="initial-deposit" name="initial-deposit">
+            <input type="number" class="form-control" id="initial-deposit" name="initial-deposit">
           </div>
           <button type="submit" class="btn btn-primary mt-2 mb-3">Submit</button>
         </form>
@@ -34,11 +34,11 @@
         <form id="transfer-form">
           <div class="form-group">
             <label for="deposit">Deposit:</label>
-            <input type="text" class="form-control" id="deposit" name="deposit">
+            <input type="number" class="form-control" id="deposit" name="deposit">
           </div>
           <div class="form-group">
             <label for="withdraw">Withdraw:</label>
-            <input type="text" class="form-control" id="withdraw" name="withdraw">
+            <input type="number" class="form-control" id="withdraw" name="withdraw">
           </div>
           <button type="submit" class="btn btn-primary mt-2 mb-3" id="transfer-button">Transfer</button>
         </form>
@@ -48,7 +48,7 @@
       <div id="history" class="hidden">
         <h2>History</h2>
         <p>Your transaction history:</p>
-        <div id="transaction-history">
+        <div id="transaction-history" class="row">
 
         </div>
       </div>
